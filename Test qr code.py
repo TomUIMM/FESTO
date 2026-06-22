@@ -2,7 +2,7 @@ import qrcode
 
 # L'URL exacte pointant vers ton GitHub avec des données de test
 url_festo = (
-    "https://TomUIMM.github.io/Festo-tracking/"
+    "https://TomUIMM.github.io/FESTO/"
     "?date=22/06/2026"
     "&debut=09:15"
     "&fin=09:17"
