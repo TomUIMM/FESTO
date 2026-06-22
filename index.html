@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Suivi Palette Festo</title>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; background: #f4f6f9; text-align: center; padding: 20px; }
+        .card { background: white; max-width: 400px; margin: 30px auto; padding: 20px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        h1 { color: #005A9C; font-size: 24px; }
+        .data-line { display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid #eee; }
+        .valeur { font-weight: bold; color: #333; }
+        h3 { margin-top: 20px; color: #555; text-align: left; }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <h1>📦 Palette Détectée</h1>
+        <hr>
+        <div class="data-line"><span>Date :</span> <span class="valeur" id="date">--/--/--</span></div>
+        <div class="data-line"><span>Heure Début :</span> <span class="valeur" id="debut">--:--:--</span></div>
+        <div class="data-line"><span>Heure Fin :</span> <span class="valeur" id="fin">--:--:--</span></div>
+        
+        <h3>Composition :</h3>
+        <div class="data-line"><span>Compartiment 1 :</span> <span class="valeur" id="c1">--</span></div>
+        <div class="data-line"><span>Compartiment 2 :</span> <span class="valeur" id="c2">--</span></div>
+        <div class="data-line"><span>Compartiment 3 :</span> <span class="valeur" id="c3">--</span></div>
+    </div>
+
+    <script>
+        // Le script récupère les paramètres après le "?" dans l'URL du QR code
+        const urlParams = new URLSearchParams(window.location.search);
+        
+        // Affichage des données sur la page
+        document.getElementById('date').innerText = urlParams.get('date') || 'Inconnue';
+        document.getElementById('debut').innerText = urlParams.get('debut') || '--:--';
+        document.getElementById('fin').innerText = urlParams.get('fin') || '--:--';
+        document.getElementById('c1').innerText = urlParams.get('c1') || 'Vide';
+        document.getElementById('c2').innerText = urlParams.get('c2') || 'Vide';
+        document.getElementById('c3').innerText = urlParams.get('c3') || 'Vide';
+    </script>
+
+</body>
+</html>
